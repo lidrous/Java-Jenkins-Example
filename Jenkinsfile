@@ -1,16 +1,20 @@
 pipeline {
     agent any
+    environment {
+        PATH+EXTRA = '/usr/bin/mvn/bin' // Append Maven to the existing PATH
+    }
     stages {
         stage('Build') {
             steps {
-                sh '/usr/bin/mvn clean install'
+                sh 'mvn clean install' // Use 'mvn' directly since it's now in the PATH
             }
         }
         stage('Test') {
             steps {
-                sh '/usr/bin/mvn test'
+                sh 'mvn test' // Use 'mvn' directly since it's now in the PATH
             }
         }
     }
 }
+
 
