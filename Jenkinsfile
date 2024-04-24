@@ -3,12 +3,12 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh '/usr/share/maven/bin/mvn clean install'
+                sh '/usr/bin/mvn clean install'
             }
         }
         stage('Test') {
             steps {
-                sh '/usr/share/maven/bin/mvn test'
+                sh '/usr/bin/mvn test'
             }
         }
     }
