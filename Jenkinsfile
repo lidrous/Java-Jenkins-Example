@@ -8,7 +8,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                git 'https://github.com/your_username/your_repository.git'
+                git url: 'https://github.com/lidrous/Java-Jenkins-Example.git'
                 sh '${MAVEN_HOME}/bin/mvn compile'
             }
         }
@@ -19,6 +19,7 @@ pipeline {
         }
     }
 }
+
 
 
 
